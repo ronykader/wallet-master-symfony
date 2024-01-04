@@ -1,1 +1,31 @@
-This software allows users to monitor income, record daily expenditures, and categorize transactions for detailed financial insights. Through user-friendly interfaces, it facilitates the creation of budgets, helping users set and adhere to financial goals. Real-time data updates provide a dynamic overview of spending patterns, fostering better financial decision-making. Notifications and alerts keep users informed about budget limits and financial milestones. With features like expense analytics, goal tracking, and customized reporting, these software solutions empower users to take control of their finances, ensuring a more organized and financially responsible lifestyle
+## Money and Daily Cost Management Software
+
+This software serves as a powerful tool for efficient budgeting and expense tracking, providing users with the ability to manage their finances effectively. It includes features such as income tracking, expense categorization, and real-time insights into spending patterns. With user-friendly interfaces and budget-setting capabilities, it empowers individuals to make informed financial decisions. Notifications and alerts keep users updated on budget limits and milestones.
+
+### Installation
+
+To install the Money and Daily Cost Management Software, use the following Composer commands:
+
+```angular2html
+composer require symfony/asset-mapper
+```
+```angular2html
+composer require symfony/asset
+```
+```angular2html
+composer require symfonycasts/tailwind-bundle
+```
+
+```angular2html
+symfony console tailwind:init
+```
+
+```angular2html
+symfony console tailwind:build -w
+```
+```angular2html
+symfony console cache:clear
+```
+```angular2html
+composer require knplabs/knp-time-bundle
+```
