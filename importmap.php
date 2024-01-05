@@ -21,4 +21,10 @@ return [
     'js-confetti' => [
         'version' => '0.12.0',
     ],
+    '@hotwired/stimulus' => [
+        'version' => '3.2.2',
+    ],
+    'tom-select' => [
+        'version' => '2.3.1',
+    ],
 ];

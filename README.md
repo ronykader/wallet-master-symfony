@@ -29,3 +29,24 @@ symfony console cache:clear
 ```angular2html
 composer require knplabs/knp-time-bundle
 ```
+```angular2html
+composer require tales-from-a-dev/flowbite-bundle
+```
+```angular2html
+composer require security
+```
+```angular2html
+symfony console doctrine:database:create
+```
+```angular2html
+symfony console make:migration
+```
+```angular2html
+symfony console doctrine:migrations:migrate
+```
+```angular2html
+ composer require symfony/validator
+```
+```angular2html
+composer require symfony/ux-autocomplete
+```
