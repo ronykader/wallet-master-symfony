@@ -21,6 +21,15 @@ class UnitRepository extends ServiceEntityRepository
         parent::__construct($registry, Unit::class);
     }
 
+    public function getUnitData(): array
+    {
+        return $this->createQueryBuilder('unit')
+            ->select('unit.id', 'unit.name', 'unit.status', 'unit.createdAt')
+            ->orderBy('unit.id', 'DESC')
+            ->getQuery()
+            ->getArrayResult();
+    }
+
 //    /**
 //     * @return Unit[] Returns an array of Unit objects
 //     */

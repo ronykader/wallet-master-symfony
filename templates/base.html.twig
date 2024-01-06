@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}Space Inviters!{% endblock %}</title>
+        <title>{% block title %}Money and Daily Cost Management Software{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {% block stylesheets %}
         {% endblock %}
@@ -13,6 +13,9 @@
         {% endblock %}
     </head>
     <body class="bg-black text-white font-mono">
+        <div id="flash-container">
+            {{ include('_flashes.html.twig') }}
+        </div>
         <div class="container mx-auto min-h-screen flex flex-col">
             <header class="my-8 px-4">
                 <nav class="flex items-center justify-between mb-4">
@@ -39,7 +42,7 @@
             <!-- Footer -->
             <footer class="py-4 mt-6 bg-gray-800 text-center">
                 <div class="text-sm">
-                    With <svg class="inline-block w-4 h-4 text-red-600 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 3.22l-.61-.6a5.5 5.5 0 00-7.78 7.78l7.39 7.4 7.39-7.4a5.5 5.5 0 00-7.78-7.78l-.61.61z"/></svg> from Symfonycasts.
+                    Money and Daily Cost Management Software
                 </div>
             </footer>
         </div>

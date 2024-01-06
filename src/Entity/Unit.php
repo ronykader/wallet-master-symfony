@@ -5,8 +5,12 @@ namespace App\Entity;
 use App\Repository\UnitRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UnitRepository::class)]
+#[UniqueEntity('name', 'This unit name is already used')]
+#[UniqueEntity('slug', 'This unit slug is already used')]
 class Unit
 {
     #[ORM\Id]
@@ -14,7 +18,7 @@ class Unit
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255), Assert\NotBlank(message: 'This Unit name field should not be blank')]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]

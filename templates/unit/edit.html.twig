@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Unit Edit{% endblock %}
+
+{% block body %}
+    <div class="flex">
+        <aside class="hidden md:block md:w-64 bg-gray-900 px-2 py-6">
+            <h2 class="text-xl text-white font-semibold mb-6 px-2">Planets</h2>
+            <div>
+                {{ include('main/_sidebar.html.twig') }}
+            </div>
+        </aside>
+
+        <section class="flex-1 ml-10">
+            <div class="bg-gray-800 p-4 rounded">
+                <form action="{{ path('unit_update', {'unit': unit.id} ) }}" method="POST">
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('unit_update') }}"
+                    >
+                    <div class="grid gap-6 mb-6 md:grid-cols-2">
+                        <div>
+                            <label for="unit_name" class="block mb-2 text-sm font-medium text-gray-900 text-white">Unit
+                                Name</label>
+                            <input type="text" id="unit_name" name="unit_name"
+                                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 text-[#000000] focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                   placeholder="Unit Name"
+                                   value="{{ unit.name }}"
+                            >
+                        </div>
+                        <div>
+                            <label for="unit_status" class="block mb-2 text-sm font-medium text-gray-900 text-white">Select
+                                Status</label>
+                            <select id="unit_status" name="unit_status"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 text-[#000000] focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option value="1" {{ unit.name == 1 ? 'selected' : '' }}>Active</option>
+                                <option value="2" {{ unit.name == 2 ? 'selected' : '' }}>Inactive</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+                    <div class="text-right">
+                        <button type="submit"
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Update Unit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+{% endblock %}

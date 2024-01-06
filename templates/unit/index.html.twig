@@ -1,20 +1,72 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ItemController!{% endblock %}
+{% block title %}Space Inviters!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="flex">
+        <aside class="hidden md:block md:w-64 bg-gray-900 px-2 py-6">
+            <h2 class="text-xl text-white font-semibold mb-6 px-2">Planets</h2>
+            <div>
+                {{ include('main/_sidebar.html.twig') }}
+            </div>
+        </aside>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <section class="flex-1 ml-10">
+            <div class="bg-gray-800 p-4 rounded">
+                {#       Start Content         #}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/PRODUCTS/wallet-master/src/Controller/ItemController.php'|file_link(0) }}">src/Controller/ItemController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/PRODUCTS/wallet-master/templates/item/index.html.twig'|file_link(0) }}">templates/item/index.html.twig</a></code></li>
-    </ul>
-</div>
+
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                SL
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Unit name
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Unit Status
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Created Time
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Action
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for unit in units %}
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row"
+                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ loop.index }}
+                                </th>
+                                <td class="px-6 py-4">
+                                    {{ unit.name }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ unit.status == '1' ? 'Active' : 'Inactive' }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ unit.createdAt | date("m/d/Y") }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="{{ path('unit_edit', {'unit': unit.id}) }}"
+                                       class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a href="{{ path('unit_destroy', {'unit': unit.id}) }}"
+                                       class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                {#       End Content         #}
+            </div>
+        </section>
+    </div>
 {% endblock %}

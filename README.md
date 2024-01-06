@@ -50,3 +50,12 @@ symfony console doctrine:migrations:migrate
 ```angular2html
 composer require symfony/ux-autocomplete
 ```
+```angular2html
+symfony console importmap:require tom-select
+```
+```angular2html
+php bin/console importmap:require tom-select/dist/css/tom-select.default.css
+```
+```angular2html
+ symfony console tailwind:build -w
+```
