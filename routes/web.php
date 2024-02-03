@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    return "Welcome to our Class";
+    return "Welcome to Wallet Master Laravel";
 
 //    return view('welcome');
 });
