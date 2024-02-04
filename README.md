@@ -1,6 +1,6 @@
 ## Money and Daily Cost Management Software
 
-Testing tThis software serves as a powerful tool for efficient budgeting and expense tracking, providing users with the ability to manage their finances effectively. It includes features such as income tracking, expense categorization, and real-time insights into spending patterns. With user-friendly interfaces and budget-setting capabilities, it empowers individuals to make informed financial decisions. Notifications and alerts keep users updated on budget limits and milestones.
+Testing This software serves as a powerful tool for efficient budgeting and expense tracking, providing users with the ability to manage their finances effectively. It includes features such as income tracking, expense categorization, and real-time insights into spending patterns. With user-friendly interfaces and budget-setting capabilities, it empowers individuals to make informed financial decisions. Notifications and alerts keep users updated on budget limits and milestones.
 
 ### Installation
 
