@@ -1,22 +1,13 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/', [HomeController::class, 'index']);
 
-    return "Welcome to Wallet Master Laravel";
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
-//    return view('welcome');
-});
-
-//Route::get('/posts', function () {
-//
-//    return 'Testing Posts';
-//
-////    return view('welcome');
-//});
-
-Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index']);
-
-Route::get('/products', [\App\Http\Controllers\ProductController::class,'products']);
+Route::get('/about-us',[AboutController::class, 'xyz']);
 
